@@ -1,5 +1,5 @@
 dependencies {
     subprojects.forEach {
-        dependencies { api(it) }
+        api(it)
     }
 }
