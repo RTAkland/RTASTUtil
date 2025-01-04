@@ -3,7 +3,7 @@
 添加maven仓库
 
 ```kotlin
-maven("https://maven.rtast.cn/releases")
+maven("https://pkg.rtast.cn/releases")
 ```
 
 添加依赖
