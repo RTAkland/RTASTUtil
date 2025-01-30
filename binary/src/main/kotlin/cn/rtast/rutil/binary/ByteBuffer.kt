@@ -25,26 +25,12 @@ fun ByteBuffer.getBoolean(): Boolean {
     return get() == 1.toByte()
 }
 
-/**
- * 直接使用拓展属性的getter/setter来取出/放入
- * Boolean类型的数据
- */
-var ByteBuffer.boolean
-    get() = this.getBoolean()
-    set(value) {
-        putBoolean(value)
-    }
-
-/**
- * 兼容Java的取出Boolean
- */
-fun getBoolean(buffer: ByteBuffer): Boolean {
-    return buffer.getBoolean()
-}
-
-/**
- * 兼容Java的放入Boolean
- */
-fun putBoolean(buffer: ByteBuffer, value: Boolean) {
-    buffer.putBoolean(value)
-}
+///**
+// * 直接使用拓展属性的getter/setter来取出/放入
+// * Boolean类型的数据
+// */
+//var ByteBuffer.boolean
+//    get() = this.getBoolean()
+//    set(value) {
+//        putBoolean(value)
+//    }
