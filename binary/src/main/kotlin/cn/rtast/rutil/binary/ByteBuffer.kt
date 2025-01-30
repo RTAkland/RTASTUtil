@@ -5,6 +5,7 @@
  */
 
 @file:Suppress("unused")
+@file:JvmName("BinaryByteBuffer")
 
 package cn.rtast.rutil.binary
 
@@ -22,4 +23,28 @@ fun ByteBuffer.putBoolean(value: Boolean) {
  */
 fun ByteBuffer.getBoolean(): Boolean {
     return get() == 1.toByte()
+}
+
+/**
+ * 直接使用拓展属性的getter/setter来取出/放入
+ * Boolean类型的数据
+ */
+var ByteBuffer.boolean
+    get() = this.getBoolean()
+    set(value) {
+        putBoolean(value)
+    }
+
+/**
+ * 兼容Java的取出Boolean
+ */
+fun getBoolean(buffer: ByteBuffer): Boolean {
+    return buffer.getBoolean()
+}
+
+/**
+ * 兼容Java的放入Boolean
+ */
+fun putBoolean(buffer: ByteBuffer, value: Boolean) {
+    buffer.putBoolean(value)
 }

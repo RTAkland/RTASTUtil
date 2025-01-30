@@ -8,14 +8,16 @@ val libVersion: String by extra
 group = "cn.rtast"
 version = libVersion
 
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 subprojects {
     apply {
         apply(plugin = "org.jetbrains.kotlin.jvm")
         apply(plugin = "maven-publish")
-    }
-
-    repositories {
-        mavenCentral()
     }
 
     val sourceJar by tasks.registering(Jar::class) {

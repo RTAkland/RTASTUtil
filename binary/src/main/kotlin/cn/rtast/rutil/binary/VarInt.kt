@@ -5,6 +5,7 @@
  */
 
 @file:Suppress("unused")
+@file:JvmName("BinaryVarInt")
 
 package cn.rtast.rutil.binary
 

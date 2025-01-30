@@ -5,6 +5,7 @@
  */
 
 @file:Suppress("unused")
+@file:JvmName("Http")
 
 package cn.rtast.rutil.http
 

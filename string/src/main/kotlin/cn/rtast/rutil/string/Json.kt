@@ -12,7 +12,10 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 
-val gson: Gson = GsonBuilder()
+/**
+ * 可变对象可以更改使用的Gson对象配置
+ */
+var rtastUtilGson: Gson = GsonBuilder()
     .setPrettyPrinting()
     .disableHtmlEscaping()
     .create()
@@ -21,19 +24,19 @@ val gson: Gson = GsonBuilder()
  * 将对象转换为json字符串
  */
 fun Any.toJson(): String {
-    return gson.toJson(this)
+    return rtastUtilGson.toJson(this)
 }
 
 /**
  * 将json字符串转换为对象
  */
 inline fun <reified T> String.fromJson(): T {
-    return gson.fromJson(this, T::class.java)
+    return rtastUtilGson.fromJson(this, T::class.java)
 }
 
 /**
  * 将json字符串转换为数组对象
  */
 inline fun <reified T> String.fromArrayJson(): T {
-    return gson.fromJson(this, object : TypeToken<T>() {}.type)
+    return rtastUtilGson.fromJson(this, object : TypeToken<T>() {}.type)
 }

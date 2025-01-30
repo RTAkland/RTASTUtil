@@ -1,5 +1,5 @@
 dependencies {
-    subprojects.forEach {
-        api(it)
-    }
+    api(project(":binary"))
+    api(project(":string"))
+    api(project(":http"))
 }

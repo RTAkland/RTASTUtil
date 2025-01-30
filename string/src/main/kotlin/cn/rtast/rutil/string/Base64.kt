@@ -5,6 +5,7 @@
  */
 
 @file:Suppress("unused")
+@file:JvmName("Base64Util")
 
 package cn.rtast.rutil.string
 
@@ -36,4 +37,24 @@ fun String.decodeToString(): String {
  */
 fun String.decodeToByteArray(): ByteArray {
     return Base64.getDecoder().decode(this)
+}
+
+fun encodeToBase64(string: String): String {
+    return string.encodeToBase64()
+}
+
+fun decodeToBase64(string: String): String {
+    return string.decodeToString()
+}
+
+fun encodeToBase64(bytes: ByteArray): String {
+    return bytes.encodeToBase64()
+}
+
+fun decodeToBase64(bytes: ByteArray): String {
+    return bytes.decodeToString()
+}
+
+fun decodeToByteArray(string: String): ByteArray {
+    return string.decodeToByteArray()
 }
