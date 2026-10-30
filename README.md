@@ -5,6 +5,10 @@
 ```kotlin
 maven("https://repo.maven.rtast.cn/releases")
 ```
+小满的maven仓库(备份)
+```kotlin
+maven("https://m2.1v.fit/releases")
+```
 
 添加依赖
 

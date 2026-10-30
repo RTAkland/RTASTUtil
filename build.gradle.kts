@@ -48,6 +48,13 @@ subprojects {
                     password = System.getenv("PUBLISH_TOKEN")
                 }
             }
+            maven {
+                url = uri("https://m2.1v.fit/releases/")
+                credentials {
+                    username = "xiaoman1221"
+                    password = System.getenv("XIAOMAN_PUBLISH_TOKEN")
+                }
+            }
         }
     }
 }
